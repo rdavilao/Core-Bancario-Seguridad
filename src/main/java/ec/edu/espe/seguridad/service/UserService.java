@@ -37,7 +37,7 @@ public class UserService {
                 String token = getJwtToken(user);
                 user.setDateLogin(new Date());
                 userRepository.save(user);
-                return UserRq.builder().user(username).token(token).build();
+                return UserRq.builder().user(username).token(token).role(user.getRoles().get(0)).build();
             } else {
                 throw new CredentialInvalidException("Credenciales incorrectas");
             }

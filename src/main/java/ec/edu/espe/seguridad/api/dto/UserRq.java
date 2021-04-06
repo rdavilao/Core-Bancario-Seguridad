@@ -9,4 +9,5 @@ public class UserRq {
 
     private String user;
     private String token;
+    private String role;
 }
